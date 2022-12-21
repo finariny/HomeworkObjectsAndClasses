@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         firstBook();
         secondBook();
+        homeworkObjectMethods();
     }
 
     public static void printBookName (String bookName) {
@@ -44,7 +45,22 @@ public class Main {
         printPublishingYear(afterTheBall.getPublishingYear());
 
         afterTheBall.setPublishingYear(1911);
-
         printPublishingYear(afterTheBall.getPublishingYear());
+    }
+
+    public static void homeworkObjectMethods() {
+        Author authorOfCrimeAndPunishment = new Author("Фёдор", "Достоевский");
+        Book crimeAndPunishment = new Book("Преступление и наказание", authorOfCrimeAndPunishment, 1866);
+
+        Author authorOfAfterTheBall = new Author("Лев", "Толстой");
+        Book afterTheBall = new Book("После бала", authorOfAfterTheBall, 1911);
+
+        // Метод toString:
+        System.out.println(crimeAndPunishment);
+        System.out.println(afterTheBall);
+
+        //Метод equals:
+        System.out.println(authorOfCrimeAndPunishment.equals(authorOfAfterTheBall));
+        System.out.println(crimeAndPunishment.equals(afterTheBall));
     }
 }
