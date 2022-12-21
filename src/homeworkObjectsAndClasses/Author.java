@@ -19,9 +19,7 @@ public class Author {
 
     @Override
     public String toString() {
-        String separator = " ";
-        String fullName = String.join(separator, firstName, lastName);
-        return fullName;
+        return firstName + " " + lastName;
     }
 
     @Override
