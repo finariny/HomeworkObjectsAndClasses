@@ -26,4 +26,26 @@ public class Book {
     public void setPublishingYear (int publishingYear) {
         this.publishingYear = publishingYear;
     }
+
+    @Override
+    public String toString () {
+        return "Название - " + bookName + "; Автор - " + author + "; Год - " + publishingYear;
+    }
+
+    @Override
+    public boolean equals (Object otherBook) {
+        if (this == otherBook) {
+            return true;
+        }
+        if (otherBook == null || this.getClass() != otherBook.getClass()) {
+            return false;
+        }
+        Book book = (Book) otherBook;
+        return bookName.equals(book.bookName) && author.equals(book.author) && publishingYear == book.publishingYear;
+    }
+
+    @Override
+    public int hashCode () {
+        return java.util.Objects.hash(bookName, author, publishingYear);
+    }
 }
